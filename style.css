@@ -1,0 +1,128 @@
+:root{
+    --background:#101114;
+    --primary-color:#1c1D20;
+    --secondary-color:#4a4d57;
+    --accent-color:#00ffc4;
+    --text-color:#f9f9f9;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16pt;
+    color: var(--text-color);
+}
+body{
+    min-height: 100vh;
+    padding: 10px;
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1{
+    margin-top: 100px;
+    margin-bottom: 20px;
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--accent-color);
+    text-align: center;
+    text-transform: uppercase;
+}
+.wraper{
+    width: 700px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#todoinput{
+    box-sizing: border-box;
+    padding: 10px 12px;
+    width: 100%;
+    background:none;
+    border: 2px solid var(--secondary-color);
+    border-radius: 1000px;
+    font: inherit;
+    color: var(--text-color);
+    caret-color: var(--accent-color);
+}
+#todoinput:focus{
+    outline: none;
+}
+form{
+    position: relative;
+}
+#add-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    padding: 0 30px;
+    border-radius: 1000px;
+    background-color: var(--accent-color);
+    cursor: pointer;
+    font: inherit;
+    font-weight: 600;
+}
+.todo{
+    margin-bottom: 10px;
+    padding: 0 16px;
+    background-color: var(--primary-color);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+}
+.todo .todotext{
+    padding:15px;
+    padding-right: 0;
+    flex-grow: 1;
+}
+/* label{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} */
+.delbtn{
+    padding: 3px;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.delbtn svg{
+    cursor: pointer;
+    transition: 200ms ease;
+}
+.delbtn:hover svg{
+    fill: red;
+}
+.custom-check{
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    min-height: 20px;
+    min-width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: 200ms ease;
+    cursor: pointer;
+}
+input[type="checkbox"]:checked ~ .custom-check{
+    background-color: var(--accent-color);
+}
+input[type="checkbox"]:checked ~ .custom-check svg{
+    fill: var(--primary-color);
+}
+input[type="checkbox"]:checked ~  .todotext{
+    text-decoration: line-through;
+    color: var(--secondary-color);
+}
+input[type="checkbox"]{
+    display: none;
+}
