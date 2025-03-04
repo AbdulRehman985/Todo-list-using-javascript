@@ -70,3 +70,4 @@ function gettodo(){
   const todos=localStorage.getItem("todos")|| "[]";
   return JSON.parse(todos);
 }
+//add
